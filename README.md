@@ -1,8 +1,8 @@
 ## Backend
 
 # Step 1
-    Run the following command
-    `npm install`
+Run the following command to install all package
+    npm install
 # Step 2
-    Run
-    `node server.js`
+Run the following command to start the server
+    node server.js
