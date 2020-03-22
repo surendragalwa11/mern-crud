@@ -8,7 +8,7 @@ var intiliaseRouter = function intiliaseRouter(app) {
     app.use(express.json());
     app.use(cors());
     app.use('/employee', employeeRouter);
-    app.use('/student', studentRouter);
+    app.use('/students', studentRouter);
 }
 
 module.exports = intiliaseRouter;

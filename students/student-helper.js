@@ -21,7 +21,7 @@ var updateStudent = async function(studentId, updateInformation){
 
 var deleteStudent = async function(studentId){
 	console.log('delete student', studentId);
-	var deleteData = await Student.deleteone({student_id:studentId});
+	var deleteData = await Student.deleteOne({student_id:studentId});
 	return deleteData;
 };
 
@@ -29,5 +29,5 @@ module.exports = {
   fetchStudents,
   createStudent,
   updateStudent,
-  deleteStudent;
+  deleteStudent
 }
