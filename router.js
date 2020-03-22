@@ -1,9 +1,9 @@
-const express = require('express');
+var express = require('express');
 var cors = require('cors')
-const employeeRouter = require('./employee-router');
+var employeeRouter = require('./employees/employee-router');
 
 
-const intiliaseRouter = function intiliaseRouter(app) {
+var intiliaseRouter = function intiliaseRouter(app) {
     app.use(express.json());
     app.use(cors());
     app.use('/employee', employeeRouter);
