@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 
-const {fetchEmployees,createEmployee,updateEmployee,deleteEmployee} = require('./employee-helper');
+var {fetchEmployees,createEmployee,updateEmployee,deleteEmployee} = require('./employee-helper');
 
 // get all employees
 router.get('/', async function(request, response) {
     try {
-        const employees = await fetchEmployees();
+        var employees = await fetchEmployees();
         return response.status(200).send({employees: employees});
     } catch(error) {
         console.log(error);
@@ -18,7 +18,7 @@ router.get('/', async function(request, response) {
 // create employee
 router.post('/', async function(request, response) {
     try {
-        const employeeId = await createEmployee(request.body);
+        var employeeId = await createEmployee(request.body);
         return response.status(200).send({employeeId: employeeId});
     } catch(error) {
         console.log(error);
@@ -29,7 +29,7 @@ router.post('/', async function(request, response) {
 // update employee
 router.put('/', async function(request, response) {
     try {
-        const updateStatus = await updateEmployee(request.body.employeeId, request.body.updateInformation);
+        var updateStatus = await updateEmployee(request.body.employeeId, request.body.updateInformation);
         return response.status(200).send(updateStatus);
     } catch(error) {
         console.log(error);
@@ -40,7 +40,7 @@ router.put('/', async function(request, response) {
 // delete employee
 router.delete('/', async function(request, response) {
     try {
-        const deleteStatus = await deleteEmployee(request.body.employeeId);
+        var deleteStatus = await deleteEmployee(request.body.employeeId);
         return response.status(200).send(deleteStatus);
     } catch(error) {
         console.log(error);

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 var employeeSchema = new mongoose.Schema({
     employee_name: { type: String, required: true, min: 3, max: 20},
