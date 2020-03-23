@@ -21,7 +21,6 @@ class CreateEmployee extends Component {
     }
 
     onCreateEmployee = async() => {
-        console.log(this.state);
         var employeeData = {
             "employee_name" : this.state.employeeName,
             "employee_id" : this.state.employeeId,
@@ -42,18 +41,23 @@ class CreateEmployee extends Component {
 
     }
 
+    componentDidMount() {
+        if(this.props.isEditPage && (this.state.employeeName !== this.props.employee.employee_name)) {
+            this.setState({
+                employeeName: this.props.employee.employee_name,
+                employeeId: this.props.employee.employee_id,
+                employeeAddress: this.props.employee.employee_address,
+                employeeContact: this.props.employee.employee_contact,
+            });
+        }
+    }
+
     render() {
         const isEditPage = this.props.isEditPage;
         let empName = this.state.employeeName;
         let empId = this.state.employeeId;
         let empAddress = this.state.employeeAddress;
         let empContact = this.state.employeeContact;
-        if(isEditPage) {
-            empName = this.props.employee.employee_name;
-            empId = this.props.employee.employee_id;
-            empAddress = this.props.employee.employee_address;
-            empContact = this.props.employee.employee_contact;
-        }
         return(
             <div className='create-employee-form'>
                 <div className="create-container">
