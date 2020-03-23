@@ -27,8 +27,8 @@ class Employee extends Component {
         await this.fetchEmployees();
     }
 
-    onEditEmployee = () => {
-
+    onEditEmployee = (employeeId) => {
+        console.log('edit', employeeId);
     }
 
     onDeleteEmployee = async (employeeId) => {
@@ -57,9 +57,6 @@ class Employee extends Component {
         });
     }
 
-    onEditEmployee = (employeeId) => {
-        console.log('edit', employeeId);
-    }
 
 
     render() {
