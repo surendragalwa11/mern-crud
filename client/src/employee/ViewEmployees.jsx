@@ -36,7 +36,7 @@ class ViewEmployees extends Component {
                                     <td>{employee.employee_address}</td>
                                     <td>{employee.employee_contact}</td>
                                     <td>
-                                        <button type="button" className="btn btn-warning" onClick={() => this.props.onEditEmployee(employee._id)}>
+                                        <button type="button" className="btn btn-warning" onClick={() => this.props.onEditEmployee(employee)}>
                                             Edit
                                         </button>
                                     </td>
@@ -47,9 +47,19 @@ class ViewEmployees extends Component {
                                     </td>
                                 </tr>
                             ))
+                            
                         }
                     </tbody>
+                    {/* Empty table text */}
+                    {
+                        this.props.employees.length < 1
+                        &&
+                        <div className='no-data-text'>
+                            No employee exist. Please create an employee first.
+                        </div>
+                    }
                 </table>
+                
                 {/* Delete Modal */}
                 <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
