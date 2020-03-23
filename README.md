@@ -1,5 +1,5 @@
 # CRUD Application
-This application has client (React JS) and serve (Node JS) part.
+This application has client (React JS) and server (Node JS) part.
 To run the application we need to run both the client and server separately.
 
 ## Server
@@ -15,7 +15,7 @@ Navigate to server directory
 Run the server
         ```node server.js```
 
-##### Server URL: http://localshot:3010/
+##### Server URL: http://localhost:3010/
 
 
 ## Client
@@ -31,4 +31,4 @@ Install all modules
  Run the server
         ```npm start```
 
-Client URL: http://localshot:3000/
+#### Client URL: http://localhost:3000/
