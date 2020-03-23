@@ -18,7 +18,8 @@ router.get('/', async function(request, response) {
 // create employee
 router.post('/', async function(request, response) {
     try {
-        var employeeId = await createEmployee(request.body);
+        console.log('body',request.body);       
+         var employeeId = await createEmployee(request.body);
         return response.status(200).send({employeeId: employeeId});
     } catch(error) {
         console.log(error);
