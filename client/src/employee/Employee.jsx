@@ -13,6 +13,7 @@ class Employee extends Component {
             isCreatePage: true,
             isEditPage: false,
             employees: [],
+            editEmployee: null,
         };
     }
 
@@ -27,8 +28,13 @@ class Employee extends Component {
         await this.fetchEmployees();
     }
 
-    onEditEmployee = (employeeId) => {
-        console.log('edit', employeeId);
+    onEditEmployee = (employee) => {
+        this.setState({
+            isViewPage: false,
+            isCreatePage: false,
+            isEditPage: true,
+            editEmployee: employee
+        });
     }
 
     onDeleteEmployee = async (employeeId) => {
@@ -70,16 +76,17 @@ class Employee extends Component {
                 )
         } else if(this.state.isCreatePage) {
             return (
-            <div>
+                <div>
                     <Header onViewAllEmployees ={this.onViewAllEmployees} onCreateEmployee ={this.onCreateEmployee} />
                     <CreateEmployee onCreateEmployee={this.onViewAllEmployees} />
-            </div>
+                </div>
             )
         } else if(this.state.isEditPage) {
+            const employee = this.state.editEmployee;
              return (
             <div>
-                    <Header onViewAllEmployees ={this.onViewAllEmployees} onCreateEmployee ={this.onCreateEmployee} />
-                    <CreateEmployee/>
+                <Header onViewAllEmployees ={this.onViewAllEmployees} onCreateEmployee ={this.onCreateEmployee} />
+                <CreateEmployee isEditPage={true} employee={employee} onCreateEmployee={this.onViewAllEmployees} />
             </div>
             )
         }

@@ -36,7 +36,7 @@ class ViewEmployees extends Component {
                                     <td>{employee.employee_address}</td>
                                     <td>{employee.employee_contact}</td>
                                     <td>
-                                        <button type="button" className="btn btn-warning" onClick={() => this.props.onEditEmployee(employee._id)}>
+                                        <button type="button" className="btn btn-warning" onClick={() => this.props.onEditEmployee(employee)}>
                                             Edit
                                         </button>
                                     </td>
