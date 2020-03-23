@@ -20,42 +20,41 @@ class CreateEmployee extends Component {
         });
     }
 
-    onCreateEmployee=async() => {
-          console.log(this.state);
-          var employeeData = {
+    onCreateEmployee = async() => {
+        console.log(this.state);
+        var employeeData = {
             "employee_name" : this.state.employeeName,
             "employee_id" : this.state.employeeId,
             "employee_address" : this.state.employeeAddress,
             "employee_contact" : parseInt(this.state.employeeContact)
-                            };
-     await createEmployee(employeeData);
+        };
+        await createEmployee(employeeData);
+        this.props.onCreateEmployee();
+
     }
 
     render() {
         return(
             <div className='create-employee-form'>
-              
+                <div className="create-container">
+                    <form action="#">
+                        <label for="Empid">Employee Id</label>
+                        <input type="text" onChange={this.onChange} id="emp" name="employeeId" placeholder="Employee ID" />
 
-               <div className="container">
-               <form action="#">
-                <label for="Empid">Employee Id</label>
-                <input type="text" onChange={this.onChange} id="emp" name="employeeId" placeholder="Employee Id" />
+                        <label for="fname">Employee Name</label>
+                        <input type="text" onChange={this.onChange} id="fname" name="employeeName" placeholder="Employee Name" />
 
-                <label for="fname">Employee Name</label>
-                <input type="text" onChange={this.onChange} id="fname" name="employeeName" placeholder="First Name" />
+                        <label for="email">Address</label>
+                        <input type="text" onChange={this.onChange} id="email" name="employeeAddress" placeholder="Employee Address" />
 
-               <label for="email">Address</label>
-                <input type="text" onChange={this.onChange} id="email" name="employeeAddress" placeholder="Email" />
+                        <label for="contact">Contact Number</label>
+                        <input type="tel" onChange={this.onChange} id="contact" name="employeeContact" placeholder="Employee Contact" />
 
-                <label for="contact">Contact Number</label>
-                <input type="tel" onChange={this.onChange} id="contact" name="employeeContact" placeholder="Contact" />
+                        <button type="button" onClick={this.onCreateEmployee} id="button" name="create">Create</button>
 
-                <button type="button" onClick={this.onCreateEmployee} id="button" name="create">Create</button>
-                <button type="button" id="button" name="cancel">Cancel</button>
-
-                </form>  
-                        </div>
-                        </div>
+                    </form>  
+                </div>
+            </div>
         );
     }
 }
