@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
 import {getAllEmployees} from './ApiCalls.js';
-import ViewEmployees from './ViewEmployees.jsx'
+import ViewEmployees from './ViewEmployees.jsx';
+import CreateEmployee from './CreateEmployeeForm.jsx';
+import "./employee.css";
+import  Header from './Header.jsx';
 
 class Employee extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isViewPage: true,
-            isCreatePage: false,
+            isViewPage: false,
+            isCreatePage: true,
             isEditPage: false,
             employees: [],
         };
@@ -26,17 +29,45 @@ class Employee extends Component {
     onDeleteEmployee = () => {
         
     }
+    
+    onViewAllEmployees =() =>{
+        this.setState({
+            isViewPage: true,
+            isCreatePage: false,
+            isEditPage: false
+        })
+    }
 
+    onCreateEmployee =() =>{
+        this.setState({
+            isViewPage: false,
+            isCreatePage: true,
+            isEditPage: false
+        })
+    }
     render() {
         const employees = this.state.employees ? this.state.employees : [];
         if(this.state.isViewPage) {
-            return <ViewEmployees employees={employees} />
+            return(
+                <div>
+                   <Header onViewAllEmployees ={this.onViewAllEmployees} onCreateEmployee ={this.onCreateEmployee} />
+                   <ViewEmployees employees={employees} />
+                </div>
+                )
         } else if(this.state.isCreatePage) {
-            return <div>Create Page</div>
+            return (
+            <div>
+                    <Header onViewAllEmployees ={this.onViewAllEmployees} onCreateEmployee ={this.onCreateEmployee} />
+                    <CreateEmployee/>
+            </div>
+            )
         } else if(this.state.isEditPage) {
-            return <div>Edit Page</div>
-        } else {
-            return <div>CRUD Application</div>
+             return (
+            <div>
+                    <Header onViewAllEmployees ={this.onViewAllEmployees} onCreateEmployee ={this.onCreateEmployee} />
+                    <CreateEmployee/>
+            </div>
+            )
         }
     }
 }

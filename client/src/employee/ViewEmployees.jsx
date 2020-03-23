@@ -10,7 +10,7 @@ class ViewEmployees extends Component {
     render() {
         console.log(this.props);
         return(
-            <table classname="table">
+            <table className="table">
                 <thead>
                     <tr>
                     <th scope="col">#ID</th>

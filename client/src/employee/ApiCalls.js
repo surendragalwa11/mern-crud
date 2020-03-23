@@ -18,10 +18,11 @@ export async function createEmployee(createEmployeeData) {
         let res = await fetch("http://localhost:3010/employee", {
             method: 'POST',
             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
+               /* 'Accept': 'application/json',*/
+                'content-type': 'application/json',
             },
-            body: createEmployeeData
+            mode: "no-cors",
+            body: JSON.stringify(createEmployeeData)
         });
         res = await res.json();
         const employeeId = res.employeeId;
