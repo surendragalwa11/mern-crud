@@ -18,10 +18,10 @@ export async function createEmployee(createEmployeeData) {
         let res = await fetch("http://localhost:3010/employee", {
             method: 'POST',
             headers: {
-               /* 'Accept': 'application/json',*/
+                'Accept': 'application/json',
                 'content-type': 'application/json',
             },
-            mode: "no-cors",
+            mode: "cors",
             body: JSON.stringify(createEmployeeData)
         });
         res = await res.json();
@@ -42,7 +42,8 @@ export async function updateEmployee(updateEmployeeData) {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: updateEmployeeData,
+            mode: "cors",
+            body: JSON.stringify(updateEmployeeData),
         });
         res = await res.json();
         const modified = res.nModified;
@@ -61,7 +62,8 @@ export async function deleteEmployee(deleteEmployeeData) {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
             },
-            body: deleteEmployeeData,
+            mode: 'cors',
+            body: JSON.stringify(deleteEmployeeData),
         });
         res = await res.json();
         const modified = res.nModified;
