@@ -16,13 +16,13 @@ var createEmployee = async function(employee) {
 
 var updateEmployee = async function(employeeId, updateInformation) {
     console.log('update employee', employeeId, updateInformation);
-    var updateStatus = await Employee.updateOne({employee_id: employeeId}, updateInformation);
+    var updateStatus = await Employee.updateOne({_id: employeeId}, updateInformation);
     return updateStatus;
 }
 
 var deleteEmployee = async function(employeeId) {
     console.log('delete employee', employeeId);
-    var deleteStatus = await Employee.deleteOne({employee_id: employeeId});
+    var deleteStatus = await Employee.deleteOne({_id: employeeId});
     return deleteStatus;
 }
 
