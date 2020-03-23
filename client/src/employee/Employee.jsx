@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {getAllEmployees} from './ApiCalls.js';
+import {getAllEmployees, deleteEmployee} from './ApiCalls.js';
 import ViewEmployees from './ViewEmployees.jsx';
 import CreateEmployee from './CreateEmployeeForm.jsx';
 import "./employee.css";
@@ -31,8 +31,13 @@ class Employee extends Component {
 
     }
 
-    onDeleteEmployee = () => {
-        
+    onDeleteEmployee = async (employeeId) => {
+        const deleteEmployeeData = {
+            employeeId: employeeId,
+        }
+        console.log('delete', deleteEmployeeData);
+        await deleteEmployee(deleteEmployeeData);
+        await this.fetchEmployees();
     }
     
     onViewAllEmployees =async () =>{
@@ -51,13 +56,19 @@ class Employee extends Component {
             isEditPage: false
         });
     }
+
+    onEditEmployee = (employeeId) => {
+        console.log('edit', employeeId);
+    }
+
+
     render() {
         const employees = this.state.employees ? this.state.employees : [];
         if(this.state.isViewPage) {
             return(
                 <div>
                    <Header onViewAllEmployees ={this.onViewAllEmployees} onCreateEmployee ={this.onCreateEmployee} />
-                   <ViewEmployees employees={employees} />
+                   <ViewEmployees employees={employees} onEditEmployee={this.onEditEmployee} onDeleteEmployee={this.onDeleteEmployee} />
                 </div>
                 )
         } else if(this.state.isCreatePage) {

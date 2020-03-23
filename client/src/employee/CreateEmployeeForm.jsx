@@ -38,16 +38,16 @@ class CreateEmployee extends Component {
             <div className='create-employee-form'>
                 <div className="create-container">
                     <form action="#">
-                        <label for="Empid">Employee Id</label>
+                        <label htmlFor="Empid">Employee Id</label>
                         <input type="text" onChange={this.onChange} id="emp" name="employeeId" placeholder="Employee ID" />
 
-                        <label for="fname">Employee Name</label>
+                        <label htmlFor="fname">Employee Name</label>
                         <input type="text" onChange={this.onChange} id="fname" name="employeeName" placeholder="Employee Name" />
 
-                        <label for="email">Address</label>
+                        <label htmlFor="email">Address</label>
                         <input type="text" onChange={this.onChange} id="email" name="employeeAddress" placeholder="Employee Address" />
 
-                        <label for="contact">Contact Number</label>
+                        <label htmlFor="contact">Contact Number</label>
                         <input type="tel" onChange={this.onChange} id="contact" name="employeeContact" placeholder="Employee Contact" />
 
                         <button type="button" onClick={this.onCreateEmployee} id="button" name="create">Create</button>
