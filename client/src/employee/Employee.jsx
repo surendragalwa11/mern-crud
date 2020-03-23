@@ -16,10 +16,15 @@ class Employee extends Component {
         };
     }
 
-    async componentDidMount() {
+    fetchEmployees = async () => {
         const employees = await getAllEmployees();
         console.log(employees);
         this.setState({employees: employees});
+
+    }
+
+    async componentDidMount() {
+        await this.fetchEmployees();
     }
 
     onEditEmployee = () => {
@@ -30,20 +35,21 @@ class Employee extends Component {
         
     }
     
-    onViewAllEmployees =() =>{
+    onViewAllEmployees =async () =>{
         this.setState({
             isViewPage: true,
             isCreatePage: false,
             isEditPage: false
-        })
+        });
+        await this.fetchEmployees();
     }
 
-    onCreateEmployee =() =>{
+    onCreateEmployee =  () =>{
         this.setState({
             isViewPage: false,
             isCreatePage: true,
             isEditPage: false
-        })
+        });
     }
     render() {
         const employees = this.state.employees ? this.state.employees : [];
@@ -58,7 +64,7 @@ class Employee extends Component {
             return (
             <div>
                     <Header onViewAllEmployees ={this.onViewAllEmployees} onCreateEmployee ={this.onCreateEmployee} />
-                    <CreateEmployee/>
+                    <CreateEmployee onCreateEmployee={this.onViewAllEmployees} />
             </div>
             )
         } else if(this.state.isEditPage) {
