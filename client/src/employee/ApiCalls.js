@@ -14,7 +14,7 @@ export async function getAllEmployees() {
 }
 
 export async function createEmployee(createEmployeeData) {
-    try {
+    try { 
         let res = await fetch("http://localhost:3010/employee", {
             method: 'POST',
             headers: {
