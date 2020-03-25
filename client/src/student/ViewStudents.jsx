@@ -32,7 +32,7 @@ render(){
                     </thead>
                     <tbody>
                     { this.props.students.map(student => (
-                     	<tr key = {student._id}>
+                     	<tr key = {student.student_id}>
                      	 <td>{student.student_name}</td>
                                     <td>{student.student_id}</td>
                                     <td>{student.student_address}</td>
@@ -74,7 +74,7 @@ render(){
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={() => this.props.onDeleteStudent(selectedStu._id)}>Delete</button>
+                            <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={() => this.props.onDeleteStudent(selectedStu.student_id)}>Delete</button>
                         </div>
                         </div>
                     </div>

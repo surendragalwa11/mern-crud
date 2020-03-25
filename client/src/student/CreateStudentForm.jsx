@@ -53,11 +53,11 @@ class CreateStudentForm extends Component{
 
 
 render() {
+const isEditPage = this.props.isEditPage;
  let stuId = this.state.studentId;
  let stuName = this.state.studentName;
  let stuContact = this.state.studentContact;
  let stuAddress = this.state.studentAddress;
- let isEditPage = this.props.isEditPage;
  return(
         <div className='create-student-form'>
                 <div className="create-container">

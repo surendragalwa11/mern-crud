@@ -84,10 +84,11 @@ class Student extends Component {
 
              )
         } else if(this.state.isEditPage){
+        const students = this.state.editStudents;
         	return(
    				<div>
                   <Header onViewAllStudents = {this.onViewAllStudents} onCreateStudent = {this.onCreateStudent} />
-   			      <CreateStudentForm onEditStudent = {true} students = {students} onCreateStudent= {this.onViewAllStudents} />
+   			      <CreateStudentForm isEditPage = {true} students = {students} onCreateStudent= {this.onViewAllStudents} />
             	</div>
         	)
         }
