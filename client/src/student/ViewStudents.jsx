@@ -74,7 +74,7 @@ render(){
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={() => this.props.onDeleteStudent(selectedStu._id)}>Delete</button>
+                            <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={() => this.props.onDeleteStudent(selectedStu.student_id)}>Delete</button>
                         </div>
                         </div>
                     </div>
