@@ -8,7 +8,6 @@ class CreateStudentForm extends Component{
       this.state = {
       	studentId : '',
       	studentName  : '',
-      	studentEmail : '' ,
       	studentContact : '',
       	studentAddress : '' 
       }
@@ -25,7 +24,6 @@ class CreateStudentForm extends Component{
          var studentData = {
          	"student_name" : this.state.studentName,
          	"student_id" : this.state.studentId,
-         	"student_email" : this.state.studentEmail,
          	"student_contact" : parseInt(this.state.studentContact),
          	"student_address" : this.state.studentAddress
          };
@@ -46,7 +44,6 @@ class CreateStudentForm extends Component{
         	this.setState({
         		studentId : this.props.student.student_id,
 				studentName  : this.props.student.student_name,
-				studentEmail : this.props.student.student_email ,
 				studentContact : this.props.student.student_contact,
 				studentAddress : this.props.student.student_address
         	});
@@ -58,7 +55,6 @@ class CreateStudentForm extends Component{
 render() {
  let stuId = this.state.studentId;
  let stuName = this.state.studentName;
- let stuEmail = this.state.studentEmail;
  let stuContact = this.state.studentContact;
  let stuAddress = this.state.studentAddress;
  let isEditPage = this.props.isEditPage;
@@ -69,10 +65,6 @@ render() {
                         <label htmlFor="Stuid">Student Id</label>
                         <input type="text" onChange={this.onChange} id="stuId" name="studentId" placeholder="Student ID" defaultValue={stuId} />
                         
-                        <label htmlFor="Stuemail">Student email</label>
-                        <input type="email" onChange={this.onChange} id="email" name="studentEmail" placeholder="Student Email" defaultValue={stuEmail} />
-
-
                         <label htmlFor="fname">Student Name</label>
                         <input type="text" onChange={this.onChange} id="fname" name="studentName" placeholder="Student Name" defaultValue={stuName} />
 

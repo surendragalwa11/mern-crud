@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var {fetchStudents,createStudent,updateStudent,deleteStudent} = require('./student-helper.js');
+var {fetchStudents,createStudent,updateStudent,deleteStudent} = require('./student-helper');
 router.get('/', async function(request,response){
 try{
 var students = await fetchStudents();
@@ -14,8 +14,8 @@ return response.status(200).send({students:students});
 
 router.post('/',async function(request,response){
 	try{
-         var studentCreate = await createStudent(request.body);
-         return response.status(200).send({studentCreate:studentCreate});
+         var studentId = await createStudent(request.body);
+         return response.status(200).send({studentId:studentId});
      }catch(error) {
           console.log(error);
           return response.status(500).send({error:'something went wrong'});
@@ -34,13 +34,13 @@ router.put('/',async function(request,response){
 });
 
 router.delete('/', async function(request,response){
-try{
-     var studentDelete = await deleteStudent(request.body.studentId);
-     return response.status(200).send(studentDelete);
-}catch(error){
-console.log(error);
-        return response.status(500).send({error: 'Something went wrong'});
-}
+    try{
+         var studentDelete = await deleteStudent(request.body.studentId);
+         return response.status(200).send(studentDelete);
+       }catch(error){
+                  console.log(error);
+                 return response.status(500).send({error: 'Something went wrong'});
+                 } 
 });
 
 module.exports = router;

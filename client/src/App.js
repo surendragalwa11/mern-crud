@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
        {/* <Employee /> */}
-        <Student />
+       { <Student /> }
         <div className='footer'>CRUD Application @Copyright</div>
     </div>
   );

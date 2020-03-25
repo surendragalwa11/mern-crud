@@ -26,7 +26,6 @@ render(){
                         <th scope="col">Employee ID</th>
                         <th scope="col">Address</th>
                         <th scope="col">Contact</th>
-                         <th scope="col">Email</th>
                         <th scope='col'>Edit</th>
                         <th scope='col'>Delete</th>
                         </tr>
@@ -38,7 +37,6 @@ render(){
                                     <td>{student.student_id}</td>
                                     <td>{student.student_address}</td>
                                     <td>{student.student_contact}</td>
-                                        <td>{student.student_email}</td>
                                     <td>
                                         <button type="button" className="btn btn-warning" onClick={() => this.props.onEditStudent(student)}>
                                             Edit

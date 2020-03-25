@@ -19,7 +19,7 @@ export async function createStudent(createStudentData) {
          'Accept' : 'application/json',
          'content-type' : 'application/json',
          },
-         mod : "cors",
+         mode : "cors",
          body : JSON.stringify(createStudentData)
          });
          res = await res.json();
@@ -38,7 +38,7 @@ export async function updateStudent(updateStudentData){
          'Accept' : 'application/json',
          'content-type' : 'application/json',
          },
-         mod : "cors",
+         mode : "cors",
          body : JSON.stringify(updateStudentData)
          });
          res = await res.json();
@@ -57,7 +57,7 @@ export async function updateStudent(updateStudentData){
          'Accept' : 'application/json',
          'content-type' : 'application/json',
          },
-         mod : "cors",
+         mode : "cors",
          body : JSON.stringify(deleteStudentData)
        });
          res = await res.json();
