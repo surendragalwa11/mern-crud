@@ -29,7 +29,7 @@ class CreateStudentForm extends Component{
          };
          if(this.props.isEditPage){
          	const updateStudentData = {
-         		studentId : this.props.student._id,
+         		studentId : this.props.student.student_id,
          		updateInformation : studentData,
          	}
          	await updateStudent(updateStudentData);

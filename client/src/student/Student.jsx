@@ -15,7 +15,7 @@ class Student extends Component {
 	     isCreatePage: true,
 	     isEditPage: false,
 	     students: [],
-	     editStudents: null, 
+	     editStudent: null, 
 	     }; 
 	        }
        
@@ -34,7 +34,7 @@ class Student extends Component {
             isViewPage: false,
             isCreatePage: false,
             isEditPage: true,
-            editStudents: student
+            editStudent: student
         });
     }
     onDeleteStudent = async (studentId) => {
@@ -88,7 +88,11 @@ class Student extends Component {
         	return(
    				<div>
                   <Header onViewAllStudents = {this.onViewAllStudents} onCreateStudent = {this.onCreateStudent} />
+<<<<<<< HEAD
    			      <CreateStudentForm isEditPage = {true} students = {students} onCreateStudent= {this.onViewAllStudents} />
+=======
+                <CreateStudentForm isEditPage={true} student= {this.state.editStudent} onCreateStudent= {this.onViewAllStudents} />
+>>>>>>> f40859a4411be86cd34c28e2d8def60c477f6e01
             	</div>
         	)
         }
