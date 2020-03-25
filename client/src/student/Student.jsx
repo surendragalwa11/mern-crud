@@ -79,7 +79,7 @@ class Student extends Component {
              return(
                 <div>
                   <Header onViewAllStudents = {this.onViewAllStudents} onCreateStudent = {this.onCreateStudent} />
-                  <CreateStudentForm onCreateStudent ={this.onCreateStudent} />
+                  <CreateStudentForm onCreateStudent ={this.onViewAllStudents} />
                 </div>
 
              )
@@ -88,11 +88,7 @@ class Student extends Component {
         	return(
    				<div>
                   <Header onViewAllStudents = {this.onViewAllStudents} onCreateStudent = {this.onCreateStudent} />
-<<<<<<< HEAD
-   			      <CreateStudentForm isEditPage = {true} students = {students} onCreateStudent= {this.onViewAllStudents} />
-=======
-                <CreateStudentForm isEditPage={true} student= {this.state.editStudent} onCreateStudent= {this.onViewAllStudents} />
->>>>>>> f40859a4411be86cd34c28e2d8def60c477f6e01
+   			      <CreateStudentForm isEditPage = {true} student= {this.state.editStudent} onCreateStudent= {this.onViewAllStudents} />
             	</div>
         	)
         }

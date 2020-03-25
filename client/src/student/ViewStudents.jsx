@@ -51,13 +51,13 @@ render(){
                                     ))
                     }
                     </tbody>
-                               {
+                            </table>
+                            {
                                  this.props.students.length < 1
                                  && <div className="no-data-text">
                                  No student exists.
                                  </div>	
                                }
-                            </table>
                              <div className="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-centered" role="document">
                         <div className="modal-content">
