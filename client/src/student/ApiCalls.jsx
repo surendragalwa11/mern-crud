@@ -14,7 +14,8 @@ export async function getAllStudents() {
 
 export async function createStudent(createStudentData) {
 	try{
-         let res = await fetch("http://localhost/students", {method : 'POST',
+         let res = await fetch("http://localhost:3010/students", {
+           method : 'POST',
          headers :{
          'Accept' : 'application/json',
          'content-type' : 'application/json',
@@ -28,12 +29,13 @@ export async function createStudent(createStudentData) {
         }catch(error){
           console.log('create employee error', error);
           return null;
-        }
+        
+}
 }
 
 export async function updateStudent(updateStudentData){
   try{
-       let res = await fetch("http://localhost/students",{method: 'PUT',
+       let res = await fetch("http://localhost:3010/students",{method: 'PUT',
       headers :{
          'Accept' : 'application/json',
          'content-type' : 'application/json',
@@ -52,7 +54,8 @@ export async function updateStudent(updateStudentData){
 
   export async function deleteStudent(deleteStudentData){
     try{
-         let res = await fetch("http://localhost/students",{method :'DELETE' ,
+         let res = await fetch("http://localhost:3010/students",{
+         method :'DELETE' ,
          headers :{
          'Accept' : 'application/json',
          'content-type' : 'application/json',
