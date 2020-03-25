@@ -27,7 +27,7 @@ class Employee extends Component {
     async componentDidMount() {
         await this.fetchEmployees();
     }
-
+   //will be called when we click on the edit button in view page table row
     onEditEmployee = (employee) => {
         this.setState({
             isViewPage: false,
@@ -36,7 +36,7 @@ class Employee extends Component {
             editEmployee: employee
         });
     }
-
+//will be called when we click on the delete button in the modal when we click on delete button in view page table row
     onDeleteEmployee = async (employeeId) => {
         const deleteEmployeeData = {
             employeeId: employeeId,
@@ -46,6 +46,7 @@ class Employee extends Component {
         await this.fetchEmployees();
     }
     
+    //will be called when we click on view all employees link in header
     onViewAllEmployees =async () =>{
         this.setState({
             isViewPage: true,
@@ -55,6 +56,7 @@ class Employee extends Component {
         await this.fetchEmployees();
     }
 
+//will be called when we click on create employee link in header
     onCreateEmployee =  () =>{
         this.setState({
             isViewPage: false,

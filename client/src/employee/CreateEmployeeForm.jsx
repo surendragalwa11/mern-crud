@@ -42,7 +42,9 @@ class CreateEmployee extends Component {
     }
 
     componentDidMount() {
-        if(this.props.isEditPage && (this.state.employeeName !== this.props.employee.employee_name)) {
+        if(this.props.isEditPage 
+      //  && (this.state.employeeName !== this.props.employee.employee_name)
+        ) {
             this.setState({
                 employeeName: this.props.employee.employee_name,
                 employeeId: this.props.employee.employee_id,
