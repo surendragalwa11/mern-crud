@@ -2,8 +2,8 @@ export async function getAllStudents() {
 	try{
          let res = await fetch("http://localhost:3010/students");
          res = await res.json();
-         console.log('res',result);
-         cons students = res.students; 
+         console.log('res',res);
+         const students = res.students; 
          return students;
       }catch(error){
           console.log('get all students', error);
@@ -16,8 +16,8 @@ export async function createStudent(createStudentData) {
 	try{
          let res = await fetch("http://localhost/students", {method : 'POST',
          headers :{
-         'Accept' : 'application/json';
-         'content-type' : 'application/json';
+         'Accept' : 'application/json',
+         'content-type' : 'application/json',
          },
          mod : "cors",
          body : JSON.stringify(createStudentData)
@@ -35,8 +35,8 @@ export async function updateStudent(updateStudentData){
   try{
        let res = await fetch("http://localhost/students",{method: 'PUT',
       headers :{
-         'Accept' : 'application/json';
-         'content-type' : 'application/json';
+         'Accept' : 'application/json',
+         'content-type' : 'application/json',
          },
          mod : "cors",
          body : JSON.stringify(updateStudentData)
@@ -54,8 +54,8 @@ export async function updateStudent(updateStudentData){
     try{
          let res = await fetch("http://localhost/students",{method :'DELETE' ,
          headers :{
-         'Accept' : 'application/json';
-         'content-type' : 'application/json';
+         'Accept' : 'application/json',
+         'content-type' : 'application/json',
          },
          mod : "cors",
          body : JSON.stringify(deleteStudentData)

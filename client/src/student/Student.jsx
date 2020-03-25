@@ -1,5 +1,5 @@
-export React,{Component} from 'react';
-import {getAllStudents, deleteStudent} from './ApiCalls.js';
+import React,{Component} from 'react';
+import {getAllStudents, deleteStudent} from './ApiCalls.jsx';
 import ViewStudents from './ViewStudents.jsx';
 import CreateStudentForm from './CreateStudentForm.jsx';
 import './student.css';
@@ -75,7 +75,7 @@ class Student extends Component {
                   <ViewStudents students = {students} onEditStudent = {this.onEditStudent} onDeleteStudent = {this.onDeleteStudent} />
         		</div>
                 )
-        } elseif(this.state.isCreatePage){
+        } else if(this.state.isCreatePage){
              return(
                 <div>
                   <Header onViewAllStudents = {this.onViewAllStudents} onCreateStudent = {this.onCreateStudent} />
@@ -83,7 +83,7 @@ class Student extends Component {
                 </div>
 
              )
-        } elseif(this.state.isEditPage){
+        } else if(this.state.isEditPage){
         	return(
    				<div>
                   <Header onViewAllStudents = {this.onViewAllStudents} onCreateStudent = {this.onCreateStudent} />

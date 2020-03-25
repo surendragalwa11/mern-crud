@@ -6,7 +6,7 @@ import Student from './student/Student.jsx';
 function App() {
   return (
     <div className="App">
-      /* <Employee />*/
+       {/* <Employee /> */}
         <Student />
         <div className='footer'>CRUD Application @Copyright</div>
     </div>

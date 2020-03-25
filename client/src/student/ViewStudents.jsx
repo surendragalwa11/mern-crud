@@ -1,15 +1,15 @@
 import React , {Component} from 'react';
 
 
-class ViewStudents extends component {
+class ViewStudents extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			selectedStudent:{};
+			selectedStudent:{},
 		};
 	}
 
-	onDeleteClick = (stu){
+	onDeleteClick = (stu) => {
       this.setState({selectedStudent: stu});
 
 }
@@ -32,7 +32,7 @@ render(){
                         </tr>
                     </thead>
                     <tbody>
-                     this.props.students.map(student => (
+                    { this.props.students.map(student => (
                      	<tr key = {student._id}>
                      	 <td>{student.student_name}</td>
                                     <td>{student.student_id}</td>
@@ -51,7 +51,7 @@ render(){
                                         </td>
                                         </tr>
                                     ))
-                                }
+                    }
                     </tbody>
                                {
                                  this.props.students.length < 1
@@ -82,6 +82,9 @@ render(){
                     </div>
                 </div>
 		</div>
+        </div>
 		);
     }
 }
+
+export default ViewStudents;

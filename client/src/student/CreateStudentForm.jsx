@@ -1,5 +1,5 @@
-export React,{Component} from 'react';
-import {createStudent,updateStudent} from './ApiCalls.js';
+import React,{Component} from 'react';
+import {createStudent,updateStudent} from './ApiCalls.jsx';
 
 
 class CreateStudentForm extends Component{
@@ -32,7 +32,7 @@ class CreateStudentForm extends Component{
          if(this.props.isEditPage){
          	const updateStudentData = {
          		studentId : this.props.student._id,
-         		updateInformation : studentData;
+         		updateInformation : studentData,
          	}
          	await updateStudent(updateStudentData);
          } else {
@@ -61,6 +61,7 @@ render() {
  let stuEmail = this.state.studentEmail;
  let stuContact = this.state.studentContact;
  let stuAddress = this.state.studentAddress;
+ let isEditPage = this.props.isEditPage;
  return(
         <div className='create-student-form'>
                 <div className="create-container">
